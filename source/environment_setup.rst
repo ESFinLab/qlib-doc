@@ -9,8 +9,13 @@ Ubuntu 22.04 LTS
 
 操作系统安装
 --------------
-- install Ubuntu desktop: https://ubuntu.com/tutorials/install-ubuntu-desktop
-- install Ubuntu desktop on a virtual machine: https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox
+桌面操作系统安装指引: 
+
+https://ubuntu.com/tutorials/install-ubuntu-desktop
+
+虚拟机安装指引: 
+
+https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox
 
 
 计算机硬件要求
