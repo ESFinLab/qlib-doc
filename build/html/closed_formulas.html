@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html  lang="zh_CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+      <title>Some Option Pricing Formulas</title>
+    
+          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
+      
+      <!-- sphinx script_files -->
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+
+      
+      <!-- bundled in js (rollup iife) -->
+      <!-- <script src="_static/theme-vendors.js"></script> -->
+      <script src="_static/theme.js" defer></script>
+    
+  <link rel="index" title="索引" href="genindex.html" />
+  <link rel="search" title="搜索" href="search.html" />
+  <link rel="next" title="方差缩减技术及其应用" href="variance_reduction_technique.html" />
+  <link rel="prev" title="金融工程基础" href="fin_basic.html" /> 
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
+  <router-link to="index.html" class="home-link">
+    
+      <span class="site-name">蒙卡定价引擎开发文档</span>
+    
+  </router-link>
+
+  <div class="links">
+    <navlinks class="can-hide">
+
+
+
+    </navlinks>
+  </div>
+</navbar>
+
+      
+      <div class="sidebar-mask" @click="toggleSidebar(false)">
+      </div>
+        <sidebar @toggle-sidebar="toggleSidebar">
+          
+          <navlinks>
+            
+
+
+
+            
+          </navlinks><div id="searchbox" class="searchbox" role="search">
+  <div class="caption"><span class="caption-text">快速搜索</span>
+    <div class="searchformwrapper">
+      <form class="search" action="search.html" method="get">
+        <input type="text" name="q" />
+        <input type="submit" value="搜索" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
+  
+    <div class="sidebar-group">
+      <p class="caption">
+        <span class="caption-text"><a href="index.html#id1">目录:</a></span>
+      </p>
+      <ul class="current">
+        
+          <li class="toctree-l1 ">
+            
+              <a href="environment_setup.html" class="reference internal ">开发环境设置</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="fin_basic.html" class="reference internal ">金融工程基础</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 current">
+            
+              <a href="#" class="reference internal current">Some Option Pricing Formulas</a>
+            
+
+            
+              <ul>
+                
+                  <li class="toctree-l2"><a href="#black-scholes-merton-model" class="reference internal">Black-Scholes-Merton Model</a></li>
+                
+                  <li class="toctree-l2"><a href="#standard-barrier-options" class="reference internal">Standard Barrier options</a></li>
+                
+                  <li class="toctree-l2"><a href="#binary-barrier-options" class="reference internal">Binary Barrier Options</a></li>
+                
+                  <li class="toctree-l2"><a href="#references" class="reference internal">References</a></li>
+                
+              </ul>
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="variance_reduction_technique.html" class="reference internal ">方差缩减技术及其应用</a>
+            
+
+            
+          </li>
+
+        
+          <li class="toctree-l1 ">
+            
+              <a href="fin_engineering.html" class="reference internal ">基于蒙特卡洛模拟算法的期权定价系统开发</a>
+            
+
+            
+          </li>
+
+        
+      </ul>
+    </div>
+  
+</div>
+        </sidebar>
+
+      <page>
+          <div class="body-header" role="navigation" aria-label="navigation">
+  
+  <ul class="breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+    <li>Some Option Pricing Formulas</li>
+  </ul>
+  
+
+  <ul class="page-nav">
+  <li class="prev">
+    <a href="fin_basic.html"
+       title="上一章">← 金融工程基础</a>
+  </li>
+  <li class="next">
+    <a href="variance_reduction_technique.html"
+       title="下一章">方差缩减技术及其应用 →</a>
+  </li>
+</ul>
+  
+</div>
+<hr>
+          <div class="content" role="main" v-pre>
+            
+  <section id="some-option-pricing-formulas">
+<h1>Some Option Pricing Formulas<a class="headerlink" href="#some-option-pricing-formulas" title="永久链接至标题">¶</a></h1>
+<p>Before we go deep into the Monte Carlo simulation algorithms, we present
+the close form formulas for some commonly seen options: vanilla options, standard barrier options,
+and binary barrier options. These closed form solutions provide us an accuracy benchmark
+for our Monte Carlo simulation results.</p>
+<p>The formulas and test results are cited from <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+<section id="black-scholes-merton-model">
+<h2>Black-Scholes-Merton Model<a class="headerlink" href="#black-scholes-merton-model" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="standard-barrier-options">
+<h2>Standard Barrier options<a class="headerlink" href="#standard-barrier-options" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="binary-barrier-options">
+<h2>Binary Barrier Options<a class="headerlink" href="#binary-barrier-options" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="永久链接至标题">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Espen Gaarder Haug, The Complete Guide for Option Pricing Formulas, 2nd ed., McGraw-Hill.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+          </div>
+          <div class="page-nav">
+            <div class="inner"><ul class="page-nav">
+  <li class="prev">
+    <a href="fin_basic.html"
+       title="上一章">← 金融工程基础</a>
+  </li>
+  <li class="next">
+    <a href="variance_reduction_technique.html"
+       title="下一章">方差缩减技术及其应用 →</a>
+  </li>
+</ul><div class="footer" role="contentinfo">
+      &#169; 版权所有 2022, Essence Security.
+    <br>
+    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+</div>
+            </div>
+          </div>
+      </page>
+    </div></div>
+    
+    
+  </body>
+</html>
