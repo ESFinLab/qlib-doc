@@ -2,6 +2,9 @@
 开发环境设置
 ==================================
 
+项目介绍
+===========
+
 操作系统要求
 ===================
 
@@ -52,10 +55,7 @@ About OpenAcc
     sudo apt update
     sudo apt install build-essential
 
-cooperation network
-===============================
 
-- email group subscription
-- github organization
-- online documentation
-- online meetups
+
+
+
