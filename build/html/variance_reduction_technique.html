@@ -1,171 +1,318 @@
+
 <!DOCTYPE html>
-<html  lang="zh_CN">
+
+<html lang="zh_CN">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-      <title>方差缩减技术及其应用</title>
+    <title>方差缩减技术及其应用</title>
     
-          <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-          <link rel="stylesheet" href="_static/theme.css " type="text/css" />
-      
-      <!-- sphinx script_files -->
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/translations.js"></script>
-        <script async="async" src="_static/mathjax/tex-chtml.js"></script>
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-      
-      <!-- bundled in js (rollup iife) -->
-      <!-- <script src="_static/theme-vendors.js"></script> -->
-      <script src="_static/theme.js" defer></script>
     
-  <link rel="index" title="索引" href="genindex.html" />
-  <link rel="search" title="搜索" href="search.html" />
-  <link rel="next" title="基于蒙特卡洛模拟算法的期权定价系统开发" href="fin_engineering.html" />
-  <link rel="prev" title="Some Option Pricing Formulas" href="closed_formulas.html" /> 
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/translations.js"></script>
+    <script async="async" src="_static/mathjax/tex-chtml.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="基于蒙特卡洛模拟算法的期权定价系统开发" href="fin_engineering.html" />
+    <link rel="prev" title="Some Option Pricing Formulas" href="closed_formulas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  <body>
-    <div id="app">
-    <div class="theme-container" :class="pageClasses"><navbar @toggle-sidebar="toggleSidebar">
-  <router-link to="index.html" class="home-link">
     
-      <span class="site-name">蒙卡定价引擎开发文档</span>
+    <div class="container-fluid" id="banner"></div>
+
     
-  </router-link>
 
-  <div class="links">
-    <navlinks class="can-hide">
-
-
-
-    </navlinks>
-  </div>
-</navbar>
-
-      
-      <div class="sidebar-mask" @click="toggleSidebar(false)">
-      </div>
-        <sidebar @toggle-sidebar="toggleSidebar">
+    <div class="container-xl">
+      <div class="row">
           
-          <navlinks>
-            
-
-
-
-            
-          </navlinks><div id="searchbox" class="searchbox" role="search">
-  <div class="caption"><span class="caption-text">快速搜索</span>
-    <div class="searchformwrapper">
-      <form class="search" action="search.html" method="get">
-        <input type="text" name="q" />
-        <input type="submit" value="搜索" />
-        <input type="hidden" name="check_keywords" value="yes" />
-        <input type="hidden" name="area" value="default" />
-      </form>
-    </div>
-  </div>
-</div><div class="sidebar-links" role="navigation" aria-label="main navigation">
-  
-    <div class="sidebar-group">
-      <p class="caption">
-        <span class="caption-text"><a href="index.html#id1">目录:</a></span>
-      </p>
-      <ul class="current">
-        
-          <li class="toctree-l1 ">
-            
-              <a href="environment_setup.html" class="reference internal ">开发环境设置</a>
-            
-
-            
-          </li>
-
-        
-          <li class="toctree-l1 ">
-            
-              <a href="fin_basic.html" class="reference internal ">金融工程基础</a>
-            
-
-            
-          </li>
-
-        
-          <li class="toctree-l1 ">
-            
-              <a href="closed_formulas.html" class="reference internal ">Some Option Pricing Formulas</a>
-            
-
-            
-          </li>
-
-        
-          <li class="toctree-l1 current">
-            
-              <a href="#" class="reference internal current">方差缩减技术及其应用</a>
-            
-
-            
-              <ul>
-                
-                  <li class="toctree-l2"><a href="#id2" class="reference internal">控制变量法</a></li>
-                
-                  <li class="toctree-l2"><a href="#id3" class="reference internal">在期权中的实际应用</a></li>
-                
-              </ul>
-            
-          </li>
-
-        
-          <li class="toctree-l1 ">
-            
-              <a href="fin_engineering.html" class="reference internal ">基于蒙特卡洛模拟算法的期权定价系统开发</a>
-            
-
-            
-          </li>
-
-        
-      </ul>
-    </div>
-  
-</div>
-        </sidebar>
-
-      <page>
-          <div class="body-header" role="navigation" aria-label="navigation">
-  
-  <ul class="breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-    
-    <li>方差缩减技术及其应用</li>
-  </ul>
-  
-
-  <ul class="page-nav">
-  <li class="prev">
-    <a href="closed_formulas.html"
-       title="上一章">← Some Option Pricing Formulas</a>
-  </li>
-  <li class="next">
-    <a href="fin_engineering.html"
-       title="下一章">基于蒙特卡洛模拟算法的期权定价系统开发 →</a>
-  </li>
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  目录:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="environment_setup.html">
+   开发环境设置
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fin_basic.html">
+   金融工程基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="closed_formulas.html">
+   Some Option Pricing Formulas
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   方差缩减技术及其应用
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fin_engineering.html">
+   基于蒙特卡洛模拟算法的期权定价系统开发
+  </a>
+ </li>
 </ul>
-  
-</div>
-<hr>
-          <div class="content" role="main" v-pre>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/variance_reduction_technique.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   控制变量法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   在期权中的实际应用
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     示例
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>方差缩减技术及其应用</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   控制变量法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   在期权中的实际应用
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     示例
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
   <section id="id1">
-<h1>方差缩减技术及其应用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>方差缩减技术及其应用<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h1>
 <p>蒙特卡洛模拟需要大量的试验才能进行合理准确的估计。如果能够成倍地减少随机模拟中的误差方差，就可以有效地节省随机模拟时间。
 本节将着重介绍方差缩减技术中的 <strong>控制变量法</strong>，及其在期权定价中的实际运用。</p>
 <section id="id2">
-<h2>控制变量法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>控制变量法<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h2>
 <p>控制变量法适用于与两个强相关的随机变量。设要估计的随机变量为 <span class="math notranslate nohighlight">\(X\)</span>，其期望为 <span class="math notranslate nohighlight">\(\text{E}(X) = \frac{1}{N} \sum_{i=1}^N X_i\)</span>，其中 <span class="math notranslate nohighlight">\(N\)</span> 为样本个数。
 为了提高精度，设另外一个随机变量 <span class="math notranslate nohighlight">\(Y\)</span>，满足</p>
 <div class="math notranslate nohighlight">
@@ -190,7 +337,7 @@
 <p>于是，只要能够找到零均值随机变量 <span class="math notranslate nohighlight">\(Y\)</span> 并且使得 <span class="math notranslate nohighlight">\(\rho_{X,Y} \neq 0\)</span>，就可以减少 <span class="math notranslate nohighlight">\(X\)</span> 的估计方差。</p>
 </section>
 <section id="id3">
-<h2>在期权中的实际应用<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>在期权中的实际应用<a class="headerlink" href="#id3" title="永久链接至标题">#</a></h2>
 <p>在期权定价中，需要两个 <strong>相似的，相关性高</strong> 的期权A和期权B:</p>
 <ol class="arabic simple">
 <li><p>记期权A某次蒙特卡洛模拟下对应的路径 <span class="math notranslate nohighlight">\(i\)</span> 下的现值为 <span class="math notranslate nohighlight">\(A_i\)</span>；</p></li>
@@ -204,11 +351,11 @@
 <li><p>计算出对应的期权定价结果 <span class="math notranslate nohighlight">\(\text{E}(X + bY)\)</span> 对随机变量 <span class="math notranslate nohighlight">\(X\)</span> 进行估计， 替代了原来使用的 <span class="math notranslate nohighlight">\(\text{E}(X)\)</span>。</p></li>
 </ol>
 <section id="id4">
-<h3>示例<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h3>示例<a class="headerlink" href="#id4" title="永久链接至标题">#</a></h3>
 <p>在实际金融市场中，离散型的障碍期权应用更为广泛。然而，解析解对于离散型障碍期权适用范围很小，仅适用于按日观察的情况。因此，
 在以下的实证分析中，采用按月观察的向上敲出看涨期权为 <strong>期权A</strong>，按日观察的向上敲出看涨期权为 <strong>期权B</strong>, 对他们在相同路径下做100万次蒙特卡洛模拟。</p>
 <p>向上敲出期权的基本条款设置如下：</p>
-<table class="docutils align-default">
+<table class="table">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -241,7 +388,7 @@
 </tbody>
 </table>
 <p>由于 <strong>期权B</strong> 没有对应的解析解，设 <strong>期权A</strong> 和 <strong>期权B</strong> 的真值为1千万次蒙特卡洛的结果，对应的真值结果为：</p>
-<table class="docutils align-default">
+<table class="table">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -259,7 +406,7 @@
 </tbody>
 </table>
 <p>采用 <strong>控制变量法</strong> 后进行100万次蒙特卡洛模拟的对比结果如下：</p>
-<table class="docutils align-default">
+<table class="table">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -289,27 +436,50 @@
 </section>
 
 
-          </div>
-          <div class="page-nav">
-            <div class="inner"><ul class="page-nav">
-  <li class="prev">
-    <a href="closed_formulas.html"
-       title="上一章">← Some Option Pricing Formulas</a>
-  </li>
-  <li class="next">
-    <a href="fin_engineering.html"
-       title="下一章">基于蒙特卡洛模拟算法的期权定价系统开发 →</a>
-  </li>
-</ul><div class="footer" role="contentinfo">
-      &#169; 版权所有 2022, Essence Security.
-    <br>
-    Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0 with <a href="https://github.com/schettino72/sphinx_press_theme">Press Theme</a> 0.8.0.
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="closed_formulas.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">Some Option Pricing Formulas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="fin_engineering.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">基于蒙特卡洛模拟算法的期权定价系统开发</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-            </div>
-          </div>
-      </page>
-    </div></div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Liao Song<br/>
+  
+      &copy; Copyright 2022, Essence Security.<br/>
+</p>
+        </footer>
+    </div>
     
-    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
   </body>
 </html>

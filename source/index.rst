@@ -10,6 +10,7 @@
    :maxdepth: 2
    :caption: 目录:
    
+   project_introduction
    environment_setup
    fin_basic
    closed_formulas

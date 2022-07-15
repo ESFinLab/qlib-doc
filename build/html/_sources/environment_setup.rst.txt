@@ -2,30 +2,37 @@
 开发环境设置
 ==================================
 
+项目介绍
+===========
 
-Hardware Specifications
+操作系统要求
+===================
+
+Ubuntu 22.04 LTS
+
+操作系统安装
+--------------
+桌面操作系统安装指引: 
+
+https://ubuntu.com/tutorials/install-ubuntu-desktop
+
+虚拟机安装指引: 
+
+https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox
+
+
+计算机硬件要求
 ==========================
 
 We will explore the power of CPU vectorization and GPU acceleration provided by the manufacturers.
 
 `CUDA supported Nvidia GPUs <https://developer.nvidia.com/cuda-gpus/>`_
 
-OneAPI supported Intel CPUs 
+`OneAPI supported Intel CPUs <https://www.intel.com/content/www/us/en/developer/articles/system-requirements/intel-oneapi-base-toolkit-system-requirements.html
+/>`_
 
-https://www.intel.com/content/www/us/en/developer/articles/system-requirements/intel-oneapi-base-toolkit-system-requirements.html
 
-
-Operation system 
-===================
-
-Ubuntu 22.04 LTS
-
-Installation 
---------------
-- install Ubuntu desktop: https://ubuntu.com/tutorials/install-ubuntu-desktop
-- install Ubuntu desktop on a virtual machine: https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox
-
-Prepare software
+相关软件
 ===================
 
 开发所需基础软件以及工具
@@ -48,10 +55,30 @@ About OpenAcc
     sudo apt update
     sudo apt install build-essential
 
-cooperation network
+项目合作方式
 ===============================
 
-- email group subscription
-- github organization
-- online documentation
-- online meetups
+|email| 项目负责人主要联络方式 songliao[at]foxmail[dot]com
+
+|github| Github 组织，申请加入请联系项目负责人
+
+|wechat| 企业微信群，申请加入请联系项目负责人
+
+.. |email| image:: figures/email.png
+    :alt: email
+    :width: 50px
+
+
+.. |github| image:: figures/github.png
+    :alt: github
+    :width: 50px
+    :target: https://github.com/ESFinLab
+
+
+.. |wechat| image:: figures/wechat.png
+    :alt: github
+    :width: 50px
+
+
+
+
