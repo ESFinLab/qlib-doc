@@ -1,5 +1,5 @@
 ================================
-Some Option Pricing Formulas
+部分期权（近似）解析解定价公式
 ================================
 
 Before we go deep into the Monte Carlo simulation algorithms, we present 

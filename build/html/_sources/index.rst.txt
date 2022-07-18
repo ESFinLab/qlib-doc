@@ -11,8 +11,8 @@
    :caption: 目录:
    
    project_introduction
-   environment_setup
    fin_basic
+   environment_setup
    closed_formulas
    variance_reduction_technique
    fin_engineering

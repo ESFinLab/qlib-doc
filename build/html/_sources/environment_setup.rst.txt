@@ -2,8 +2,7 @@
 开发环境设置
 ==================================
 
-项目介绍
-===========
+
 
 操作系统要求
 ===================
@@ -55,29 +54,6 @@ About OpenAcc
     sudo apt update
     sudo apt install build-essential
 
-项目合作方式
-===============================
-
-|email| 项目负责人主要联络方式 songliao[at]foxmail[dot]com
-
-|github| Github 组织，申请加入请联系项目负责人
-
-|wechat| 企业微信群，申请加入请联系项目负责人
-
-.. |email| image:: figures/email.png
-    :alt: email
-    :width: 50px
-
-
-.. |github| image:: figures/github.png
-    :alt: github
-    :width: 50px
-    :target: https://github.com/ESFinLab
-
-
-.. |wechat| image:: figures/wechat.png
-    :alt: github
-    :width: 50px
 
 
 

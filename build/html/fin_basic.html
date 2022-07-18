@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>金融工程基础</title>
+    <title>金融工程知识基础</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -35,8 +35,8 @@
     <script async="async" src="_static/mathjax/tex-chtml.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="Some Option Pricing Formulas" href="closed_formulas.html" />
-    <link rel="prev" title="开发环境设置" href="environment_setup.html" />
+    <link rel="next" title="开发环境设置" href="environment_setup.html" />
+    <link rel="prev" title="项目简介" href="project_introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
     
@@ -88,18 +88,23 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="environment_setup.html">
-   开发环境设置
+  <a class="reference internal" href="project_introduction.html">
+   项目简介
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   金融工程基础
+   金融工程知识基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="environment_setup.html">
+   开发环境设置
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="closed_formulas.html">
-   Some Option Pricing Formulas
+   部分期权（近似）解析解定价公式
   </a>
  </li>
  <li class="toctree-l1">
@@ -109,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fin_engineering.html">
-   基于蒙特卡洛模拟算法的期权定价系统开发
+   金融工程开发技术基础
   </a>
  </li>
 </ul>
@@ -246,7 +251,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   几何布朗运动
+   关于几何布朗运动
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -256,7 +261,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   其他随机过程
+   随机过程的离散化
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -266,7 +271,27 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   随机过程的离散化
+   随机波动率模型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a">
+   附录A：伊藤引理的推导
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b-cholesky">
+   附录B：Cholesky矩阵分解算法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-crox-ingersol-roxqe">
+   附录C：Crox-Ingersol-Rox过程的QE离散化算法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   参考资料
   </a>
  </li>
 </ul>
@@ -278,7 +303,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>金融工程基础</h1>
+                <h1>金融工程知识基础</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -290,7 +315,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
-   几何布朗运动
+   关于几何布朗运动
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -300,7 +325,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id3">
-   其他随机过程
+   随机过程的离散化
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -310,7 +335,27 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id5">
-   随机过程的离散化
+   随机波动率模型
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a">
+   附录A：伊藤引理的推导
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b-cholesky">
+   附录B：Cholesky矩阵分解算法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-crox-ingersol-roxqe">
+   附录C：Crox-Ingersol-Rox过程的QE离散化算法
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   参考资料
   </a>
  </li>
 </ul>
@@ -324,28 +369,77 @@ title="Print to PDF"
               <div>
                 
   <section id="id1">
-<h1>金融工程基础<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h1>
+<h1>金融工程知识基础<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h1>
 <section id="id2">
-<h2>几何布朗运动<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h2>
-<div class="math notranslate nohighlight">
-\[dS(t) = S(t)\mu dt + \sigma S(t) dW_t\]</div>
-<p>where <span class="math notranslate nohighlight">\(W\)</span> is a Wiener process.</p>
+<h2>关于几何布朗运动<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h2>
+<div class="math notranslate nohighlight" id="equation-eq-1">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-1" title="公式的永久链接">#</a></span>\[dS(t) = \mu S(t) dt + \sigma S(t) dW_t\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(W_t\)</span> 是一个 <a class="reference external" href="https://en.wikipedia.org/wiki/Wiener_process">维纳过程 (Wiener process)</a>。 <span class="math notranslate nohighlight">\(\mu\)</span> 表示漂移， <span class="math notranslate nohighlight">\(\sigma\)</span> 表示随机波动的幅度（即波动率）， 在几何布朗运动的模型假设下，它们都是常数。</p>
 </section>
 <section id="ito-s-lemma">
 <h2>伊藤引理 Ito’s Lemma<a class="headerlink" href="#ito-s-lemma" title="永久链接至标题">#</a></h2>
-<p>对于满足一下随机偏微分方式的随机过程</p>
-<div class="math notranslate nohighlight">
-\[dX_t = \mu_t dt + \sigma_t dW_t\]</div>
-<p>那么对于二次可导函数 <span class="math notranslate nohighlight">\(f(t, X)\)</span> , 有以下等式成立</p>
+<p>本文主要介绍伊藤第三引理及其应用。
+对于满足以下随机偏微分方式的随机过程</p>
+<div class="math notranslate nohighlight" id="equation-eq-2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-2" title="公式的永久链接">#</a></span>\[dX_t = \mu_t dt + \sigma_t dW_t\]</div>
+<p>那么对于二次可导函数 <span class="math notranslate nohighlight">\(f(t, X_t)\)</span> , 有以下等式成立</p>
+<div class="math notranslate nohighlight" id="equation-eq-3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-3" title="公式的永久链接">#</a></span>\[df(t, X_t) = (\frac{\partial f}{\partial t} + \mu_t\frac{\partial f}{\partial X} + \frac{1}{2}\sigma_t^2\frac{\partial^2f}{\partial X^2})dt + \sigma_t\frac{\partial f}{\partial X}dW_t\]</div>
+<p>关于伊藤引理的推导请参考本节附录</p>
 </section>
 <section id="id3">
-<h2>其他随机过程<a class="headerlink" href="#id3" title="永久链接至标题">#</a></h2>
+<h2>随机过程的离散化<a class="headerlink" href="#id3" title="永久链接至标题">#</a></h2>
+<p>我们利用伊藤引理 <a class="reference internal" href="#equation-eq-3">(3)</a> 可以得到资产价格几何布朗运动的解析形式，进而得到按观察点离散的价格路径模拟算法。</p>
+<p>设 <span class="math notranslate nohighlight">\(f(S(t)) = \ln{S(t)}\)</span>,那么</p>
+<div class="math notranslate nohighlight" id="equation-eq-4">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-4" title="公式的永久链接">#</a></span>\[\frac{\partial f}{\partial S} = \frac{1}{S}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-5">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-5" title="公式的永久链接">#</a></span>\[\frac{\partial^2 f}{\partial S^2} = -\frac{1}{S^2}\]</div>
+<p>将 <a class="reference internal" href="#equation-eq-4">(4)</a>， <a class="reference internal" href="#equation-eq-5">(5)</a> 以及 <span class="math notranslate nohighlight">\(\mu_t = \mu S(t)\)</span>, <span class="math notranslate nohighlight">\(\sigma_t = \sigma S(t)\)</span> 代入 <a class="reference internal" href="#equation-eq-3">(3)</a> 式可以得到</p>
+<div class="math notranslate nohighlight" id="equation-eq-6">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq-6" title="公式的永久链接">#</a></span>\[d\ln{S(t)} = (\mu - \frac{1}{2}\sigma^2)dt + \sigma dW_t\]</div>
+<p><a class="reference internal" href="#equation-eq-6">(6)</a> 式两边积分，即可求得 <a class="reference internal" href="#equation-eq-1">(1)</a> 式从 <span class="math notranslate nohighlight">\(t\)</span> 到 <span class="math notranslate nohighlight">\(t+\Delta t\)</span> 区间的解析形式：</p>
+<div class="math notranslate nohighlight" id="equation-eq-7">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-7" title="公式的永久链接">#</a></span>\[S(t + \Delta t) = S(t)\exp((\mu - \frac{1}{2}\sigma^2)\Delta t + \sigma W_{\Delta t})\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(W_{\Delta t} \sim \mathcal{N} (0, \sqrt{\Delta t})\)</span>.</p>
+<p>因此，资产价格从 <span class="math notranslate nohighlight">\(t\)</span> 到 <span class="math notranslate nohighlight">\(t+\Delta t\)</span> 的离散化方法可表示为</p>
+<div class="math notranslate nohighlight" id="equation-eq-8">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-8" title="公式的永久链接">#</a></span>\[S(t + \Delta t) = S(t)\exp((\mu - \frac{1}{2}\sigma^2)\Delta t + \sigma \sqrt{\Delta t}\epsilon)\]</div>
+<p>或者更简单的，对数形式:</p>
+<div class="math notranslate nohighlight" id="equation-eq-9">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-9" title="公式的永久链接">#</a></span>\[\ln{S(t + \Delta t)} = \ln{S(t)} + (\mu - \frac{1}{2}\sigma^2)\Delta t + \sigma \sqrt{\Delta t}\epsilon\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\epsilon \sim \mathcal{N} (0, 1)\)</span>。</p>
+<p>注意到 <a class="reference internal" href="#equation-eq-9">(9)</a> 式避免了昂贵的幂运算，这是我们在蒙卡模拟算法中推荐的形式。</p>
 </section>
 <section id="id4">
 <h2>相关性资产的随机过程<a class="headerlink" href="#id4" title="永久链接至标题">#</a></h2>
+<p>对于多个具有相关性的资产 <span class="math notranslate nohighlight">\(S_i(t)\)</span>, 其离散化的路径可以表示为：</p>
+<div class="math notranslate nohighlight" id="equation-eq-10">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq-10" title="公式的永久链接">#</a></span>\[\ln{S_i(t + \Delta t)} = \ln{S_i(t)} + (\mu_i - \frac{1}{2}\sigma_i^2)\Delta t + \sigma_i \sqrt{\Delta t}\epsilon_i\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(\epsilon_i \sim \mathcal{N} (0, \rho_{ij})\)</span>.</p>
+<p>对于N维的正态分布随机数，我们可以通过Cholesky分解法获得。</p>
+<p>设 <span class="math notranslate nohighlight">\(\epsilon = [\epsilon_1, ..., \epsilon_N]^T\)</span> 是N个相互独立的正态分布随机数， 矩阵 <span class="math notranslate nohighlight">\(M\)</span> 满足</p>
+<div class="math notranslate nohighlight" id="equation-eq-11">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq-11" title="公式的永久链接">#</a></span>\[MM^T = [\rho_{ij}]\]</div>
+<p>那么</p>
+<div class="math notranslate nohighlight" id="equation-eq-12">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq-12" title="公式的永久链接">#</a></span>\[\hat{\epsilon} = M\epsilon\]</div>
+<p>是一组服从 <span class="math notranslate nohighlight">\(\mathcal{N} (0, \rho_{ij})\)</span> 的随机数。</p>
 </section>
 <section id="id5">
-<h2>随机过程的离散化<a class="headerlink" href="#id5" title="永久链接至标题">#</a></h2>
+<h2>随机波动率模型<a class="headerlink" href="#id5" title="永久链接至标题">#</a></h2>
+</section>
+<section id="a">
+<h2>附录A：伊藤引理的推导<a class="headerlink" href="#a" title="永久链接至标题">#</a></h2>
+</section>
+<section id="b-cholesky">
+<h2>附录B：Cholesky矩阵分解算法<a class="headerlink" href="#b-cholesky" title="永久链接至标题">#</a></h2>
+</section>
+<section id="c-crox-ingersol-roxqe">
+<h2>附录C：Crox-Ingersol-Rox过程的QE离散化算法<a class="headerlink" href="#c-crox-ingersol-roxqe" title="永久链接至标题">#</a></h2>
+</section>
+<section id="id6">
+<h2>参考资料<a class="headerlink" href="#id6" title="永久链接至标题">#</a></h2>
 </section>
 </section>
 
@@ -357,17 +451,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="environment_setup.html" title="上一页 页">
+    <a class='left-prev' id="prev-link" href="project_introduction.html" title="上一页 页">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">开发环境设置</p>
+            <p class="prev-next-title">项目简介</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="closed_formulas.html" title="下一页 页">
+    <a class='right-next' id="next-link" href="environment_setup.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">Some Option Pricing Formulas</p>
+        <p class="prev-next-title">开发环境设置</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
