@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
@@ -30,7 +30,7 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script src="_static/translations.js"></script>
     <script async="async" src="_static/mathjax/tex-chtml.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
@@ -285,17 +285,46 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#b-cholesky">
-   附录B：Cholesky矩阵分解算法
+  <a class="reference internal nav-link" href="#b-black-scholes">
+   附录B：期货对冲股指期权下的Black-Scholes偏微分方程
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     期现联动关系
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#black-scholes">
+     Black-Scholes 偏微分方程
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-cholesky">
+   附录C：Cholesky矩阵分解算法
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#c-crox-ingersol-roxqe">
-   附录C：Crox-Ingersol-Rox过程的QE离散化算法
+  <a class="reference internal nav-link" href="#d-heston">
+   附录D：Heston过程的离散化
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     标的资产价格的离散化算法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qe">
+     方差均值回归过程的离散化算法-QE算法
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id8">
    参考资料
   </a>
  </li>
@@ -349,17 +378,46 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#b-cholesky">
-   附录B：Cholesky矩阵分解算法
+  <a class="reference internal nav-link" href="#b-black-scholes">
+   附录B：期货对冲股指期权下的Black-Scholes偏微分方程
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     期现联动关系
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#black-scholes">
+     Black-Scholes 偏微分方程
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-cholesky">
+   附录C：Cholesky矩阵分解算法
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#c-crox-ingersol-roxqe">
-   附录C：Crox-Ingersol-Rox过程的QE离散化算法
+  <a class="reference internal nav-link" href="#d-heston">
+   附录D：Heston过程的离散化
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     标的资产价格的离散化算法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#qe">
+     方差均值回归过程的离散化算法-QE算法
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id8">
    参考资料
   </a>
  </li>
@@ -379,7 +437,15 @@ title="Print to PDF"
 <h2>关于几何布朗运动<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h2>
 <div class="math notranslate nohighlight" id="equation-eq-1">
 <span class="eqno">(1)<a class="headerlink" href="#equation-eq-1" title="公式的永久链接">#</a></span>\[dS(t) = \mu S(t) dt + \sigma S(t) dW_t\]</div>
-<p>其中 <span class="math notranslate nohighlight">\(W_t\)</span> 是一个 <a class="reference external" href="https://en.wikipedia.org/wiki/Wiener_process">维纳过程 (Wiener process)</a>。 <span class="math notranslate nohighlight">\(\mu\)</span> 表示漂移， <span class="math notranslate nohighlight">\(\sigma\)</span> 表示随机波动的幅度（即波动率）， 在几何布朗运动的模型假设下，它们都是常数。</p>
+<p>其中 <span class="math notranslate nohighlight">\(W_t\)</span> 是一个 <a class="reference external" href="https://en.wikipedia.org/wiki/Wiener_process">维纳过程 (Wiener process)</a>。 <span class="math notranslate nohighlight">\(\mu\)</span> 表示漂移， <span class="math notranslate nohighlight">\(\sigma\)</span> 表示随机波动的幅度（即波动率）， 在Black-Scholes-Merton的模型假设下，它们都是常数。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>在风险中性假定下，对于权益类资产 <span class="math notranslate nohighlight">\(\mu = r_f - q\)</span>, 其中 <span class="math notranslate nohighlight">\(r_f\)</span> 表示无风险利率，<span class="math notranslate nohighlight">\(q\)</span> 表示连续年化分红率。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>对于挂钩标的为指数，但实际对冲为相应股指期货的衍生品，可以将贴水作为分红处理，严格的证明请参考附录。</p>
+</div>
 </section>
 <section id="ito-s-lemma">
 <h2>伊藤引理 Ito’s Lemma<a class="headerlink" href="#ito-s-lemma" title="永久链接至标题">#</a></h2>
@@ -414,7 +480,10 @@ title="Print to PDF"
 <div class="math notranslate nohighlight" id="equation-eq-9">
 <span class="eqno">(9)<a class="headerlink" href="#equation-eq-9" title="公式的永久链接">#</a></span>\[\ln{S(t + \Delta t)} = \ln{S(t)} + (\mu - \frac{1}{2}\sigma^2)\Delta t + \sigma \sqrt{\Delta t}\epsilon\]</div>
 <p>其中 <span class="math notranslate nohighlight">\(\epsilon \sim \mathcal{N} (0, 1)\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
 <p>注意到 <a class="reference internal" href="#equation-eq-9">(9)</a> 式避免了昂贵的幂运算，这是我们在蒙卡模拟算法中推荐的形式。</p>
+</div>
 </section>
 <section id="id4">
 <h2>相关性资产的随机过程<a class="headerlink" href="#id4" title="永久链接至标题">#</a></h2>
@@ -433,18 +502,167 @@ title="Print to PDF"
 </section>
 <section id="id5">
 <h2>随机波动率模型<a class="headerlink" href="#id5" title="永久链接至标题">#</a></h2>
+<p>除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型：</p>
+<div class="math notranslate nohighlight" id="equation-eq-13">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-13" title="公式的永久链接">#</a></span>\[dV(t) = \kappa (\theta - V(t))dt + \xi\sqrt{V(t)}dW_t\]</div>
+<p>上述模型也称为均值回归模型或Cox-Ingersoll-Ross模型，其中，<span class="math notranslate nohighlight">\(V(t)\)</span> 是方差，</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\kappa\)</span> :用以表征均值回归的强度；</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta\)</span> :用以表征方差的长期均值；</p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi\)</span>: 用以表征方差的随机波动的强度。</p></li>
+</ul>
+<p><a class="reference internal" href="#equation-eq-13">(13)</a> 式 与 <a class="reference internal" href="#equation-eq-1">(1)</a> 式结合，再增加一个参数 <span class="math notranslate nohighlight">\(&lt;W_SW_V&gt; = \rho\)</span> 表示资产价格的随机过程与波动的随机过程的相关性，就形成了所谓的Heston模型。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>Cox-Ingersoll-Ross 模型也常常用来为利率的动态过程建模。</p>
+</div>
 </section>
 <section id="a">
 <h2>附录A：伊藤引理的推导<a class="headerlink" href="#a" title="永久链接至标题">#</a></h2>
 </section>
-<section id="b-cholesky">
-<h2>附录B：Cholesky矩阵分解算法<a class="headerlink" href="#b-cholesky" title="永久链接至标题">#</a></h2>
-</section>
-<section id="c-crox-ingersol-roxqe">
-<h2>附录C：Crox-Ingersol-Rox过程的QE离散化算法<a class="headerlink" href="#c-crox-ingersol-roxqe" title="永久链接至标题">#</a></h2>
-</section>
+<section id="b-black-scholes">
+<h2>附录B：期货对冲股指期权下的Black-Scholes偏微分方程<a class="headerlink" href="#b-black-scholes" title="永久链接至标题">#</a></h2>
+<p>本节改编自镒链科技公众号原创学术文章</p>
 <section id="id6">
-<h2>参考资料<a class="headerlink" href="#id6" title="永久链接至标题">#</a></h2>
+<h3>期现联动关系<a class="headerlink" href="#id6" title="永久链接至标题">#</a></h3>
+<p>设期货价格 <span class="math notranslate nohighlight">\(F(t)\)</span> 与指数（现货价格） <span class="math notranslate nohighlight">\(S(t)\)</span> 之间的关系为</p>
+<div class="math notranslate nohighlight" id="equation-eq-14">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-14" title="公式的永久链接">#</a></span>\[F(t) = e^{-q(T-t)}S(t)\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(q\)</span> 表示年化贴水率（ <span class="math notranslate nohighlight">\(q&gt;0\)</span> 表示贴水）</p>
+</section>
+<section id="black-scholes">
+<h3>Black-Scholes 偏微分方程<a class="headerlink" href="#black-scholes" title="永久链接至标题">#</a></h3>
+<p>一份期权的价值依然由其挂钩标的S决定，也即 <span class="math notranslate nohighlight">\(V=V(S, t)\)</span>。 根据伊藤引理，以及BS模型，我们有</p>
+<div class="math notranslate nohighlight" id="equation-eq-15">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-15" title="公式的永久链接">#</a></span>\[dV = (\mu S\frac{\partial V}{\partial S} + \frac{1}{2}\sigma^2 S^2\frac{\partial^2V}{\partial S^2} + \frac{\partial V}{\partial t})dt + \sigma S\frac{\partial V}{\partial S}dW_t\]</div>
+<p>到这一步为止，与传统的Black-Scholes偏微分方程的推导并无二致。</p>
+<p>下一步，需构建一个瞬时无风险投资组合 <span class="math notranslate nohighlight">\(\Pi(t)\)</span>。由于股指并不能直接进行交易，我们以股指期货来构建该组合， 即</p>
+<div class="math notranslate nohighlight" id="equation-eq-16">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-16" title="公式的永久链接">#</a></span>\[\Pi = V - \Delta F\]</div>
+<p>需要注意，此处的 <span class="math notranslate nohighlight">\(\Delta\)</span> 希腊字母Delta, 是在Delta对冲中我们需要对冲的股指期货的相应数量。</p>
+<p>那么该投资组合在极短的时间dt里的价值变化就是</p>
+<div class="math notranslate nohighlight" id="equation-eq-17">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-17" title="公式的永久链接">#</a></span>\[d\Pi = dV - \Delta dF\]</div>
+<p>由 <a class="reference internal" href="#equation-eq-14">(14)</a> 式，我们有</p>
+<div class="math notranslate nohighlight" id="equation-eq-18">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq-18" title="公式的永久链接">#</a></span>\[dF = e^{-q(T-t)}dS + qSe^{-q(T-t)}dt\]</div>
+<p>再将 <a class="reference internal" href="#equation-eq-1">(1)</a> 式代入 <a class="reference internal" href="#equation-eq-18">(18)</a> 式中，进而可得</p>
+<div class="math notranslate nohighlight" id="equation-eq-19">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq-19" title="公式的永久链接">#</a></span>\[dF = e^{-q(T-t)}(\mu + q)Sdt + e^{-q(T-t)}\sigma SdW_t\]</div>
+<p>将 <a class="reference internal" href="#equation-eq-19">(19)</a> ， <a class="reference internal" href="#equation-eq-15">(15)</a> 代入 <a class="reference internal" href="#equation-eq-17">(17)</a> ， 可以得到</p>
+<div class="math notranslate nohighlight" id="equation-eq-20">
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq-20" title="公式的永久链接">#</a></span>\[d\Pi = (\mu S\frac{dS}{dt} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + \frac{\partial V}{\partial t}-\Delta e^{-q(T-t)}(\mu + q)S)dt + (\sigma S\frac{\partial V}{\partial S}-\Delta e^{-q(T-t)} S)dW_t\]</div>
+<p>可以看到当且仅当 <span class="math notranslate nohighlight">\(\Delta = e^{q(T-t)}\frac{\partial V}{\partial S}\)</span> 时，上式中的随机项才能被完全消除。我们将其代回 <a class="reference internal" href="#equation-eq-20">(20)</a> ，可以得到</p>
+<div class="math notranslate nohighlight" id="equation-eq-21">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eq-21" title="公式的永久链接">#</a></span>\[d\Pi = (\frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + \frac{\partial V}{\partial t} - qS\frac{\partial V}{\partial S})dt\]</div>
+<p>另外在无套利假设下，有</p>
+<div class="math notranslate nohighlight" id="equation-eq-22">
+<span class="eqno">(22)<a class="headerlink" href="#equation-eq-22" title="公式的永久链接">#</a></span>\[d\Pi = r\Pi dt\]</div>
+<p>将 <a class="reference internal" href="#equation-eq-16">(16)</a> , <a class="reference internal" href="#equation-eq-21">(21)</a> 以及 <a class="reference internal" href="#equation-eq-14">(14)</a> 代入 <a class="reference internal" href="#equation-eq-22">(22)</a>， 经整理最终可以得到</p>
+<div class="math notranslate nohighlight" id="equation-eq-23">
+<span class="eqno">(23)<a class="headerlink" href="#equation-eq-23" title="公式的永久链接">#</a></span>\[\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2S^2\frac{\partial^2 V}{\partial S^2} + (r-q)S\frac{\partial V}{\partial S} - rV = 0\]</div>
+<p>不难发现 <a class="reference internal" href="#equation-eq-23">(23)</a> 与连续分红股票期权的Black-Scholes偏微分方程具有同样的形式。因此只需要把贴水率当分红处理即可。而在对冲操作中，我们有</p>
+<div class="math notranslate nohighlight" id="equation-eq-24">
+<span class="eqno">(24)<a class="headerlink" href="#equation-eq-24" title="公式的永久链接">#</a></span>\[\Delta_F = e^{q(T-t)}\frac{\partial V}{\partial S} = S(t)/F(t)\Delta_S\]</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>注意到，对于挂钩股指而采用期货对冲的衍生品，其Delta仍由股指点位来计算得到，但对冲的实际头寸 <span class="math notranslate nohighlight">\(\Delta_F\)</span> 需要被修正，最终是保持Delta金额不变。</p>
+</div>
+</section>
+</section>
+<section id="c-cholesky">
+<h2>附录C：Cholesky矩阵分解算法<a class="headerlink" href="#c-cholesky" title="永久链接至标题">#</a></h2>
+</section>
+<section id="d-heston">
+<h2>附录D：Heston过程的离散化<a class="headerlink" href="#d-heston" title="永久链接至标题">#</a></h2>
+<section id="id7">
+<h3>标的资产价格的离散化算法<a class="headerlink" href="#id7" title="永久链接至标题">#</a></h3>
+<p>设 <span class="math notranslate nohighlight">\(X(t) = \ln(S(t))\)</span>, 那么</p>
+<div class="math notranslate nohighlight" id="equation-eq-25">
+<span class="eqno">(25)<a class="headerlink" href="#equation-eq-25" title="公式的永久链接">#</a></span>\[X(t+\Delta t) =X(t)  + r\Delta t + K_0 + K_1V(t) + K_2V(t+\Delta t) + \sqrt{K_3 V(t) + K_4V(t+\Delta t)}Z\]</div>
+<p>其中  <span class="math notranslate nohighlight">\(Z \sim \mathcal{N}(0, 1)\)</span>,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(K_0 = -\frac{\rho\kappa\theta}{\xi}\Delta t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(K_1 = \gamma_1(\frac{\kappa\rho}{\xi}- \frac{1}{2})\Delta t - \frac{\rho}{\xi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(K_2 = \gamma_2(\frac{\kappa\rho}{\xi}- \frac{1}{2})\Delta t + \frac{\rho}{\xi}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(K_3 = \gamma_1(1- \rho^2)\Delta t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(K_4 = \gamma_2(1- \rho^2)\Delta t\)</span></p></li>
+</ul>
+<p>一般，我们取:math:<cite>gamma_1 = gamma_2 = 0.5</cite></p>
+</section>
+<section id="qe">
+<h3>方差均值回归过程的离散化算法-QE算法<a class="headerlink" href="#qe" title="永久链接至标题">#</a></h3>
+<p>任意选择一个关键值 <span class="math notranslate nohighlight">\(\psi_c \in [1, 2]\)</span>，例如1.5，</p>
+<ul>
+<li><ol class="arabic simple">
+<li><p>计算 <span class="math notranslate nohighlight">\(m\)</span> 和 <span class="math notranslate nohighlight">\(s^2\)</span> ;</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>计算 <span class="math notranslate nohighlight">\(\psi = s^2/m^2\)</span> ;</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>取一个均匀分布的随机数 <span class="math notranslate nohighlight">\(U_v\)</span> ;</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="4">
+<li><p>如果 <span class="math notranslate nohighlight">\(\psi \leq \psi_c\)</span>  ，则</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="arabic simple">
+<li><p>计算 a 和 b;</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>计算 <span class="math notranslate nohighlight">\(Z_v = \Phi^{-1}(U_v)\)</span> ;</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>设定 <span class="math notranslate nohighlight">\(V(t+\Delta t) = a(b+ Z_v)^2\)</span> .</p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><ol class="arabic simple" start="5">
+<li><p>否则:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="arabic simple">
+<li><p>计算 <span class="math notranslate nohighlight">\(\beta\)</span>  和 <span class="math notranslate nohighlight">\(p\)</span> ;</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>设定 <span class="math notranslate nohighlight">\(V(t+\Delta t) = \Psi^{-1}(U_v;p, \beta)\)</span>.</p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>上述算法中所涉及到的计算公式如下：</p>
+<div class="math notranslate nohighlight" id="equation-eq-26">
+<span class="eqno">(26)<a class="headerlink" href="#equation-eq-26" title="公式的永久链接">#</a></span>\[\begin{split}\begin{aligned}
+m &amp;= \theta + (V(t) - \theta)e^{-\kappa\Delta t}\\
+s^2 &amp;= \frac{V(t)\xi^2e^{-\kappa\Delta t}}{\kappa}(1-e^{-\kappa\Delta t}) + \frac{\theta \xi^2}{2\kappa}(1-e^{-\kappa\Delta t})^2\\
+b^2 &amp;= 2\psi^{-1} - 1 + \sqrt{2\psi^{-1}}\sqrt{2\psi^{-1}-1}\\
+a &amp;= \frac{m}{1+b^2}\\
+p &amp;= \frac{\psi -1}{\psi +1}\\
+\beta &amp;= \frac{1-p}{m}\\
+\Psi^{-1}(u;p,\beta) &amp;= \begin{cases}
+0, &amp; 0\leq u\leq p,\\
+\beta^{-1}\ln\frac{1-p}{1-u},&amp; p&lt;u\leq 1.
+\end{cases}
+\end{aligned}\end{split}\]</div>
+</section>
+</section>
+<section id="id8">
+<h2>参考资料<a class="headerlink" href="#id8" title="永久链接至标题">#</a></h2>
+<p>[1] Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: <a class="reference external" href="https://ssrn.com/abstract=946405">https://ssrn.com/abstract=946405</a> or <a class="reference external" href="http://dx.doi.org/10.2139/ssrn.946405">http://dx.doi.org/10.2139/ssrn.946405</a></p>
+<p>[2] Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.</p>
 </section>
 </section>
 
