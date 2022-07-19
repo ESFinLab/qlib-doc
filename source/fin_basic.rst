@@ -122,14 +122,16 @@
 随机波动率模型
 ===========================
 
-除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型：
+除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型。
+
+Heston模型中，方差具有均值回归的特性：
 
 .. math:: 
     :label: eq_13
 
     dV(t) = \kappa (\theta - V(t))dt + \xi\sqrt{V(t)}dW_t
 
-上述模型也称为均值回归模型或Cox-Ingersoll-Ross模型，其中，:math:`V(t)` 是方差，
+因此上述模型也称为均值回归模型或Cox-Ingersoll-Ross模型，其中，:math:`V(t)` 是方差，
 
 - :math:`\kappa` :用以表征均值回归的强度；
 - :math:`\theta` :用以表征方差的长期均值；
@@ -143,6 +145,7 @@
 
 附录A：伊藤引理的推导
 =======================
+
 
 
 附录B：期货对冲股指期权下的Black-Scholes偏微分方程
