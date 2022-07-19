@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/luyu/CLionProjects/qlib-doc'
+sphinx-build -M help "source" "build"  
+make: Leaving directory `/Users/luyu/CLionProjects/qlib-doc'
+ 
