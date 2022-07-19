@@ -272,7 +272,7 @@ Black-Scholes 偏微分方程
 - 1. 计算 :math:`m` 和 :math:`s^2` ;
 - 2. 计算 :math:`\psi = s^2/m^2` ;
 - 3. 取一个均匀分布的随机数 :math:`U_v` ;
-- 4. 如果 :math:`\psi \leq \psi_c`  ， 则
+- 4. 如果 :math:`\psi \leq \psi_c`  ，则
    
    - 1. 计算 a 和 b;
    - 2. 计算 :math:`Z_v = \Phi^{-1}(U_v)` ;
@@ -286,7 +286,7 @@ Black-Scholes 偏微分方程
 
 .. math::
     :label: eq_26
-    
+
     \begin{aligned}
     m &= \theta + (V(t) - \theta)e^{-\kappa\Delta t}\\
     s^2 &= \frac{V(t)\xi^2e^{-\kappa\Delta t}}{\kappa}(1-e^{-\kappa\Delta t}) + \frac{\theta \xi^2}{2\kappa}(1-e^{-\kappa\Delta t})^2\\
@@ -302,3 +302,7 @@ Black-Scholes 偏微分方程
 
 参考资料
 =========
+
+[1] Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: https://ssrn.com/abstract=946405 or http://dx.doi.org/10.2139/ssrn.946405
+
+[2] Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.
