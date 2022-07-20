@@ -125,7 +125,7 @@
 随机波动率模型
 ===========================
 
-除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型。
+除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型 [2]_。
 
 Heston模型中，方差具有均值回归的特性：
 
@@ -148,7 +148,7 @@ Heston模型中，方差具有均值回归的特性：
 
 附录A：伊藤引理的推导
 =======================
-本节整理自维基百科相关页面，详见参考文献[5]
+本节整理自维基百科相关页面，详见参考文献 [5]_
 
 :math:`f(t, X)`  是关于 :math:`X` 的二次可导函数，将其泰勒展开
 
@@ -181,7 +181,7 @@ Heston模型中，方差具有均值回归的特性：
 
 附录B：期货对冲股指期权下的Black-Scholes偏微分方程
 ==================================================
-本节改编自镒链科技微信公众号原创学术文章，详见参考文献[3]
+本节改编自镒链科技微信公众号原创学术文章，详见参考文献 [3]_
 
 期现联动关系
 ---------------
@@ -275,7 +275,7 @@ Black-Scholes 偏微分方程
 
 附录C：Cholesky矩阵分解算法
 ============================
-本节整理自维基百科相关页面, 详见参考文献[4]
+本节整理自维基百科相关页面, 详见参考文献 [4]_
 
 设正定对称矩阵
 
@@ -322,7 +322,7 @@ Black-Scholes 偏微分方程
 
 附录D：Heston过程的离散化
 =============================================
-本节整理自参考文献[1]
+本节整理自参考文献 [1]_
 
 标的资产价格的离散化算法
 ------------------------
@@ -381,12 +381,12 @@ Black-Scholes 偏微分方程
 参考资料
 =========
 
-[1] Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: https://ssrn.com/abstract=946405 or http://dx.doi.org/10.2139/ssrn.946405
+.. [1] Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: https://ssrn.com/abstract=946405 or http://dx.doi.org/10.2139/ssrn.946405
 
-[2] Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.
+.. [2] Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.
 
-[3] 期货对冲股指期权下的Black-Scholes偏微分方程， 镒链科技微信公众号 https://mp.weixin.qq.com/s/iFmrWS8JNAROoIG7D5n-mg
+.. [3] 期货对冲股指期权下的Black-Scholes偏微分方程， 镒链科技微信公众号 https://mp.weixin.qq.com/s/iFmrWS8JNAROoIG7D5n-mg
 
-[4] Cholesky decomposition, Wikipedia https://en.wikipedia.org/wiki/Cholesky_decomposition
+.. [4] Cholesky decomposition, Wikipedia https://en.wikipedia.org/wiki/Cholesky_decomposition
 
-[5] Ito's lemma, Wikipedia https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma
+.. [5] Ito's lemma, Wikipedia https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma

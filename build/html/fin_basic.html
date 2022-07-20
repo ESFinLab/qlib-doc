@@ -290,7 +290,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id9">
      期现联动关系
     </a>
    </li>
@@ -312,7 +312,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id12">
      标的资产价格的离散化算法
     </a>
    </li>
@@ -324,7 +324,7 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
+  <a class="reference internal nav-link" href="#id13">
    参考资料
   </a>
  </li>
@@ -383,7 +383,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id6">
+    <a class="reference internal nav-link" href="#id9">
      期现联动关系
     </a>
    </li>
@@ -405,7 +405,7 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
+    <a class="reference internal nav-link" href="#id12">
      标的资产价格的离散化算法
     </a>
    </li>
@@ -417,7 +417,7 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
+  <a class="reference internal nav-link" href="#id13">
    参考资料
   </a>
  </li>
@@ -503,7 +503,7 @@ title="Print to PDF"
 </section>
 <section id="id5">
 <h2>随机波动率模型<a class="headerlink" href="#id5" title="永久链接至标题">#</a></h2>
-<p>除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型。</p>
+<p>除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型 <a class="footnote-reference brackets" href="#id15" id="id6">2</a>。</p>
 <p>Heston模型中，方差具有均值回归的特性：</p>
 <div class="math notranslate nohighlight" id="equation-eq-13">
 <span class="eqno">(13)<a class="headerlink" href="#equation-eq-13" title="公式的永久链接">#</a></span>\[dV(t) = \kappa (\theta - V(t))dt + \xi\sqrt{V(t)}dW_t\]</div>
@@ -521,7 +521,7 @@ title="Print to PDF"
 </section>
 <section id="a">
 <h2>附录A：伊藤引理的推导<a class="headerlink" href="#a" title="永久链接至标题">#</a></h2>
-<p>本节整理自维基百科相关页面，详见参考文献[5]</p>
+<p>本节整理自维基百科相关页面，详见参考文献 <a class="footnote-reference brackets" href="#id18" id="id7">5</a></p>
 <p><span class="math notranslate nohighlight">\(f(t, X)\)</span>  是关于 <span class="math notranslate nohighlight">\(X\)</span> 的二次可导函数，将其泰勒展开</p>
 <div class="math notranslate nohighlight" id="equation-eq-30">
 <span class="eqno">(14)<a class="headerlink" href="#equation-eq-30" title="公式的永久链接">#</a></span>\[df(t, X) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}dX + \frac{1}{2}\frac{\partial^2 f}{\partial X^2}dX^2+...\]</div>
@@ -541,9 +541,9 @@ df(t, X) &amp;= \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}d
 </section>
 <section id="b-black-scholes">
 <h2>附录B：期货对冲股指期权下的Black-Scholes偏微分方程<a class="headerlink" href="#b-black-scholes" title="永久链接至标题">#</a></h2>
-<p>本节改编自镒链科技微信公众号原创学术文章，详见参考文献[3]</p>
-<section id="id6">
-<h3>期现联动关系<a class="headerlink" href="#id6" title="永久链接至标题">#</a></h3>
+<p>本节改编自镒链科技微信公众号原创学术文章，详见参考文献 <a class="footnote-reference brackets" href="#id16" id="id8">3</a></p>
+<section id="id9">
+<h3>期现联动关系<a class="headerlink" href="#id9" title="永久链接至标题">#</a></h3>
 <p>设期货价格 <span class="math notranslate nohighlight">\(F(t)\)</span> 与指数（现货价格） <span class="math notranslate nohighlight">\(S(t)\)</span> 之间的关系为</p>
 <div class="math notranslate nohighlight" id="equation-eq-14">
 <span class="eqno">(17)<a class="headerlink" href="#equation-eq-14" title="公式的永久链接">#</a></span>\[F(t) = e^{-q(T-t)}S(t)\]</div>
@@ -591,7 +591,7 @@ df(t, X) &amp;= \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}d
 </section>
 <section id="c-cholesky">
 <h2>附录C：Cholesky矩阵分解算法<a class="headerlink" href="#c-cholesky" title="永久链接至标题">#</a></h2>
-<p>本节整理自维基百科相关页面, 详见参考文献[4]</p>
+<p>本节整理自维基百科相关页面, 详见参考文献 <a class="footnote-reference brackets" href="#id17" id="id10">4</a></p>
 <p>设正定对称矩阵</p>
 <div class="math notranslate nohighlight" id="equation-eq-27">
 <span class="eqno">(28)<a class="headerlink" href="#equation-eq-27" title="公式的永久链接">#</a></span>\[\begin{split}\begin{align}
@@ -624,9 +624,9 @@ L_{i,j} &amp;= \frac{1}{L_{j,j}} \left( A_{i,j} - \sum_{k=1}^{j-1} L_{i,k} L_{j,
 </section>
 <section id="d-heston">
 <h2>附录D：Heston过程的离散化<a class="headerlink" href="#d-heston" title="永久链接至标题">#</a></h2>
-<p>本节整理自参考文献[1]</p>
-<section id="id7">
-<h3>标的资产价格的离散化算法<a class="headerlink" href="#id7" title="永久链接至标题">#</a></h3>
+<p>本节整理自参考文献 <a class="footnote-reference brackets" href="#id14" id="id11">1</a></p>
+<section id="id12">
+<h3>标的资产价格的离散化算法<a class="headerlink" href="#id12" title="永久链接至标题">#</a></h3>
 <p>设 <span class="math notranslate nohighlight">\(X(t) = \ln(S(t))\)</span>, 那么</p>
 <div class="math notranslate nohighlight" id="equation-eq-25">
 <span class="eqno">(31)<a class="headerlink" href="#equation-eq-25" title="公式的永久链接">#</a></span>\[X(t+\Delta t) =X(t)  + r\Delta t + K_0 + K_1V(t) + K_2V(t+\Delta t) + \sqrt{K_3 V(t) + K_4V(t+\Delta t)}Z\]</div>
@@ -709,13 +709,25 @@ p &amp;= \frac{\psi -1}{\psi +1}\\
 \end{aligned}\end{split}\]</div>
 </section>
 </section>
-<section id="id8">
-<h2>参考资料<a class="headerlink" href="#id8" title="永久链接至标题">#</a></h2>
-<p>[1] Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: <a class="reference external" href="https://ssrn.com/abstract=946405">https://ssrn.com/abstract=946405</a> or <a class="reference external" href="http://dx.doi.org/10.2139/ssrn.946405">http://dx.doi.org/10.2139/ssrn.946405</a></p>
-<p>[2] Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.</p>
-<p>[3] 期货对冲股指期权下的Black-Scholes偏微分方程， 镒链科技微信公众号 <a class="reference external" href="https://mp.weixin.qq.com/s/iFmrWS8JNAROoIG7D5n-mg">https://mp.weixin.qq.com/s/iFmrWS8JNAROoIG7D5n-mg</a></p>
-<p>[4] Cholesky decomposition, Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/Cholesky_decomposition">https://en.wikipedia.org/wiki/Cholesky_decomposition</a></p>
-<p>[5] Ito’s lemma, Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma">https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma</a></p>
+<section id="id13">
+<h2>参考资料<a class="headerlink" href="#id13" title="永久链接至标题">#</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id11">1</a></span></dt>
+<dd><p>Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: <a class="reference external" href="https://ssrn.com/abstract=946405">https://ssrn.com/abstract=946405</a> or <a class="reference external" href="http://dx.doi.org/10.2139/ssrn.946405">http://dx.doi.org/10.2139/ssrn.946405</a></p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
+<dd><p>Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id8">3</a></span></dt>
+<dd><p>期货对冲股指期权下的Black-Scholes偏微分方程， 镒链科技微信公众号 <a class="reference external" href="https://mp.weixin.qq.com/s/iFmrWS8JNAROoIG7D5n-mg">https://mp.weixin.qq.com/s/iFmrWS8JNAROoIG7D5n-mg</a></p>
+</dd>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id10">4</a></span></dt>
+<dd><p>Cholesky decomposition, Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/Cholesky_decomposition">https://en.wikipedia.org/wiki/Cholesky_decomposition</a></p>
+</dd>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id7">5</a></span></dt>
+<dd><p>Ito’s lemma, Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma">https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma</a></p>
+</dd>
+</dl>
 </section>
 </section>
 
