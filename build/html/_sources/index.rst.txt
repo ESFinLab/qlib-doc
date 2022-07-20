@@ -16,4 +16,5 @@
    closed_formulas
    variance_reduction_technique
    fin_engineering
+   auto_callables
 

@@ -4,8 +4,9 @@
 <html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>索引</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>定价引擎应用案例：自动赎回结构</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -31,8 +32,10 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script src="_static/translations.js"></script>
-    <link rel="index" title="索引" href="#" />
+    <script async="async" src="_static/mathjax/tex-chtml.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
+    <link rel="prev" title="金融工程开发技术基础" href="fin_engineering.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
     
@@ -87,7 +90,7 @@
   目录:
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="project_introduction.html">
    项目简介
@@ -118,8 +121,8 @@
    金融工程开发技术基础
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="auto_callables.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    定价引擎应用案例：自动赎回结构
   </a>
  </li>
@@ -188,22 +191,105 @@ title="Fullscreen mode"
 
 </button>
 
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/auto_callables.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   凤凰结构
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
+                <h1>定价引擎应用案例：自动赎回结构</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   凤凰结构
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -211,12 +297,63 @@ title="Fullscreen mode"
                 
               <div>
                 
-
-<h1 id="index">索引</h1>
-
-<div class="genindex-jumpbox">
- 
+  <section id="id1">
+<h1>定价引擎应用案例：自动赎回结构<a class="headerlink" href="#id1" title="永久链接至标题">#</a></h1>
+<p>本节介绍流行的四大类双障碍自动赎回结构。</p>
+<section id="id2">
+<h2>凤凰结构<a class="headerlink" href="#id2" title="永久链接至标题">#</a></h2>
+<table class="colwidths-given table">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 30%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>结构单元</p></th>
+<th class="head"><p>结构要素</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>敲出条款</p></td>
+<td><div class="line-block">
+<div class="line">1. 敲出方向</div>
+<div class="line">2. 敲出障碍价格</div>
+<div class="line">3. 敲出观察日</div>
 </div>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>敲入条款</p></td>
+<td><div class="line-block">
+<div class="line">1. 敲入方向</div>
+<div class="line">2. 敲入障碍价格</div>
+<div class="line">3. 敲入观察日</div>
+<div class="line">4. 敲入到期后的赔付类型</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">1. 敲入方向与敲出方向是成对出现的，<strong>向上敲出向下敲入</strong> 或者 <strong>向下敲出向上敲入</strong></div>
+<div class="line">2. 敲入且未敲出到期以后，凤凰结构持有者须按敲入到期后的赔付类型产生赔付，一般是 <span class="math notranslate nohighlight">\(- \mathbf{Max}(K-S_T, 0)\)</span></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>票息条款</p></td>
+<td><div class="line-block">
+<div class="line">1. 票息支付日期</div>
+<div class="line">2. 票息形式</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">1. 票息支付日期一般与敲出观察日相同， 但是也可以不同；</div>
+<div class="line">2. 凤凰结构的票息一般是一笔年化票息收益，可以额外指定票息障碍为票息支付设置条件。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 
 
               </div>
@@ -226,6 +363,13 @@ title="Fullscreen mode"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="fin_engineering.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">金融工程开发技术基础</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
