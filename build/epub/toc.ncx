@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="unknown"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>蒙卡定价引擎开发</text>
+  </docTitle>
+  <navMap>    
+    <navPoint id="navPoint1" playOrder="1">
+      <navLabel>
+        <text>蒙特卡洛模拟期权定价引擎开发项目</text>
+      </navLabel>
+      <content src="index.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint2" playOrder="2">
+      <navLabel>
+        <text>项目简介</text>
+      </navLabel>
+      <content src="project_introduction.xhtml" />  
+      <navPoint id="navPoint3" playOrder="2">
+        <navLabel>
+          <text>项目简介</text>
+        </navLabel>
+        <content src="project_introduction.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint4" playOrder="3">
+        <navLabel>
+          <text>项目组织架构</text>
+        </navLabel>
+        <content src="project_introduction.xhtml#id2" />  
+      </navPoint>
+      <navPoint id="navPoint5" playOrder="4">
+        <navLabel>
+          <text>项目分任务计划一览表</text>
+        </navLabel>
+        <content src="project_introduction.xhtml#id3" />  
+      </navPoint>
+      <navPoint id="navPoint6" playOrder="5">
+        <navLabel>
+          <text>项目交付目标</text>
+        </navLabel>
+        <content src="project_introduction.xhtml#id4" />  
+      </navPoint>
+      <navPoint id="navPoint7" playOrder="6">
+        <navLabel>
+          <text>项目合作方式</text>
+        </navLabel>
+        <content src="project_introduction.xhtml#id5" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint8" playOrder="7">
+      <navLabel>
+        <text>金融工程知识基础</text>
+      </navLabel>
+      <content src="fin_basic.xhtml" />  
+      <navPoint id="navPoint9" playOrder="7">
+        <navLabel>
+          <text>金融工程知识基础</text>
+        </navLabel>
+        <content src="fin_basic.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint10" playOrder="8">
+        <navLabel>
+          <text>维纳过程与伊藤引理</text>
+        </navLabel>
+        <content src="wiener_process_and_ito_lemma.xhtml" />  
+        <navPoint id="navPoint11" playOrder="8">
+          <navLabel>
+            <text>维纳过程与伊藤引理</text>
+          </navLabel>
+          <content src="wiener_process_and_ito_lemma.xhtml" />  
+        </navPoint>
+        <navPoint id="navPoint12" playOrder="9">
+          <navLabel>
+            <text>维纳过程</text>
+          </navLabel>
+          <content src="wiener_process_and_ito_lemma.xhtml#id3" />  
+        </navPoint>
+        <navPoint id="navPoint13" playOrder="10">
+          <navLabel>
+            <text>广义维纳过程</text>
+          </navLabel>
+          <content src="wiener_process_and_ito_lemma.xhtml#id5" />  
+        </navPoint>
+        <navPoint id="navPoint14" playOrder="11">
+          <navLabel>
+            <text>伊藤过程</text>
+          </navLabel>
+          <content src="wiener_process_and_ito_lemma.xhtml#id6" />  
+        </navPoint>
+        <navPoint id="navPoint15" playOrder="12">
+          <navLabel>
+            <text>伊藤引理</text>
+          </navLabel>
+          <content src="wiener_process_and_ito_lemma.xhtml#id7" />  
+        </navPoint>
+        <navPoint id="navPoint16" playOrder="13">
+          <navLabel>
+            <text>附录：伊藤引理的推导</text>
+          </navLabel>
+          <content src="wiener_process_and_ito_lemma.xhtml#id8" />  
+        </navPoint>
+        <navPoint id="navPoint17" playOrder="14">
+          <navLabel>
+            <text>参考资料</text>
+          </navLabel>
+          <content src="wiener_process_and_ito_lemma.xhtml#id10" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint18" playOrder="15">
+        <navLabel>
+          <text>关于几何布朗运动</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#id2" />  
+      </navPoint>
+      <navPoint id="navPoint19" playOrder="16">
+        <navLabel>
+          <text>随机过程的离散化</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#id3" />  
+      </navPoint>
+      <navPoint id="navPoint20" playOrder="17">
+        <navLabel>
+          <text>相关性资产的随机过程</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#id4" />  
+      </navPoint>
+      <navPoint id="navPoint21" playOrder="18">
+        <navLabel>
+          <text>随机波动率模型</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#id5" />  
+      </navPoint>
+      <navPoint id="navPoint22" playOrder="19">
+        <navLabel>
+          <text>附录B：期货对冲股指期权下的Black-Scholes偏微分方程</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#b-black-scholes" />  
+        <navPoint id="navPoint23" playOrder="19">
+          <navLabel>
+            <text>附录B：期货对冲股指期权下的Black-Scholes偏微分方程</text>
+          </navLabel>
+          <content src="fin_basic.xhtml#b-black-scholes" />  
+        </navPoint>
+        <navPoint id="navPoint24" playOrder="20">
+          <navLabel>
+            <text>期现联动关系</text>
+          </navLabel>
+          <content src="fin_basic.xhtml#id8" />  
+        </navPoint>
+        <navPoint id="navPoint25" playOrder="21">
+          <navLabel>
+            <text>Black-Scholes 偏微分方程</text>
+          </navLabel>
+          <content src="fin_basic.xhtml#black-scholes" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint26" playOrder="22">
+        <navLabel>
+          <text>附录C：Cholesky矩阵分解算法</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#c-cholesky" />  
+      </navPoint>
+      <navPoint id="navPoint27" playOrder="23">
+        <navLabel>
+          <text>附录D：Heston过程的离散化</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#d-heston" />  
+        <navPoint id="navPoint28" playOrder="23">
+          <navLabel>
+            <text>附录D：Heston过程的离散化</text>
+          </navLabel>
+          <content src="fin_basic.xhtml#d-heston" />  
+        </navPoint>
+        <navPoint id="navPoint29" playOrder="24">
+          <navLabel>
+            <text>标的资产价格的离散化算法</text>
+          </navLabel>
+          <content src="fin_basic.xhtml#id11" />  
+        </navPoint>
+        <navPoint id="navPoint30" playOrder="25">
+          <navLabel>
+            <text>方差均值回归过程的离散化算法-QE算法</text>
+          </navLabel>
+          <content src="fin_basic.xhtml#qe" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint31" playOrder="26">
+        <navLabel>
+          <text>参考资料</text>
+        </navLabel>
+        <content src="fin_basic.xhtml#id12" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint32" playOrder="27">
+      <navLabel>
+        <text>开发环境设置</text>
+      </navLabel>
+      <content src="environment_setup.xhtml" />  
+      <navPoint id="navPoint33" playOrder="27">
+        <navLabel>
+          <text>开发环境设置</text>
+        </navLabel>
+        <content src="environment_setup.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint34" playOrder="28">
+        <navLabel>
+          <text>操作系统要求</text>
+        </navLabel>
+        <content src="environment_setup.xhtml#id2" />  
+        <navPoint id="navPoint35" playOrder="28">
+          <navLabel>
+            <text>操作系统要求</text>
+          </navLabel>
+          <content src="environment_setup.xhtml#id2" />  
+        </navPoint>
+        <navPoint id="navPoint36" playOrder="29">
+          <navLabel>
+            <text>操作系统安装</text>
+          </navLabel>
+          <content src="environment_setup.xhtml#id3" />  
+        </navPoint>
+      </navPoint>
+      <navPoint id="navPoint37" playOrder="30">
+        <navLabel>
+          <text>计算机硬件要求</text>
+        </navLabel>
+        <content src="environment_setup.xhtml#id4" />  
+      </navPoint>
+      <navPoint id="navPoint38" playOrder="31">
+        <navLabel>
+          <text>相关软件</text>
+        </navLabel>
+        <content src="environment_setup.xhtml#id5" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint39" playOrder="32">
+      <navLabel>
+        <text>部分期权（近似）解析解定价公式</text>
+      </navLabel>
+      <content src="closed_formulas.xhtml" />  
+      <navPoint id="navPoint40" playOrder="32">
+        <navLabel>
+          <text>部分期权（近似）解析解定价公式</text>
+        </navLabel>
+        <content src="closed_formulas.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint41" playOrder="33">
+        <navLabel>
+          <text>Black-Scholes-Merton Model</text>
+        </navLabel>
+        <content src="closed_formulas.xhtml#black-scholes-merton-model" />  
+      </navPoint>
+      <navPoint id="navPoint42" playOrder="34">
+        <navLabel>
+          <text>Standard Barrier options</text>
+        </navLabel>
+        <content src="closed_formulas.xhtml#standard-barrier-options" />  
+      </navPoint>
+      <navPoint id="navPoint43" playOrder="35">
+        <navLabel>
+          <text>Binary Barrier Options</text>
+        </navLabel>
+        <content src="closed_formulas.xhtml#binary-barrier-options" />  
+      </navPoint>
+      <navPoint id="navPoint44" playOrder="36">
+        <navLabel>
+          <text>References</text>
+        </navLabel>
+        <content src="closed_formulas.xhtml#references" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint45" playOrder="37">
+      <navLabel>
+        <text>方差缩减技术及其应用</text>
+      </navLabel>
+      <content src="variance_reduction_technique.xhtml" />  
+      <navPoint id="navPoint46" playOrder="37">
+        <navLabel>
+          <text>方差缩减技术及其应用</text>
+        </navLabel>
+        <content src="variance_reduction_technique.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint47" playOrder="38">
+        <navLabel>
+          <text>控制变量法</text>
+        </navLabel>
+        <content src="variance_reduction_technique.xhtml#id2" />  
+      </navPoint>
+      <navPoint id="navPoint48" playOrder="39">
+        <navLabel>
+          <text>在期权中的实际应用</text>
+        </navLabel>
+        <content src="variance_reduction_technique.xhtml#id3" />  
+        <navPoint id="navPoint49" playOrder="39">
+          <navLabel>
+            <text>在期权中的实际应用</text>
+          </navLabel>
+          <content src="variance_reduction_technique.xhtml#id3" />  
+        </navPoint>
+        <navPoint id="navPoint50" playOrder="40">
+          <navLabel>
+            <text>示例</text>
+          </navLabel>
+          <content src="variance_reduction_technique.xhtml#id4" />  
+        </navPoint>
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint51" playOrder="41">
+      <navLabel>
+        <text>金融工程开发技术基础</text>
+      </navLabel>
+      <content src="fin_engineering.xhtml" />  
+      <navPoint id="navPoint52" playOrder="41">
+        <navLabel>
+          <text>金融工程开发技术基础</text>
+        </navLabel>
+        <content src="fin_engineering.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint53" playOrder="42">
+        <navLabel>
+          <text>C++ 金融工程开发基础</text>
+        </navLabel>
+        <content src="fin_engineering.xhtml#c" />  
+      </navPoint>
+      <navPoint id="navPoint54" playOrder="43">
+        <navLabel>
+          <text>期权的路径依赖</text>
+        </navLabel>
+        <content src="fin_engineering.xhtml#id2" />  
+      </navPoint>
+      <navPoint id="navPoint55" playOrder="44">
+        <navLabel>
+          <text>蒙特卡洛模拟定价系统开发: 从C++标准库开始</text>
+        </navLabel>
+        <content src="fin_engineering.xhtml#id3" />  
+      </navPoint>
+      <navPoint id="navPoint56" playOrder="45">
+        <navLabel>
+          <text>方差缩减技术应用</text>
+        </navLabel>
+        <content src="fin_engineering.xhtml#id4" />  
+      </navPoint>
+      <navPoint id="navPoint57" playOrder="46">
+        <navLabel>
+          <text>突破效率的瓶颈</text>
+        </navLabel>
+        <content src="fin_engineering.xhtml#id5" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint58" playOrder="47">
+      <navLabel>
+        <text>定价引擎应用案例：自动赎回结构</text>
+      </navLabel>
+      <content src="auto_callables.xhtml" />  
+      <navPoint id="navPoint59" playOrder="47">
+        <navLabel>
+          <text>定价引擎应用案例：自动赎回结构</text>
+        </navLabel>
+        <content src="auto_callables.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint60" playOrder="48">
+        <navLabel>
+          <text>凤凰结构</text>
+        </navLabel>
+        <content src="auto_callables.xhtml#id2" />  
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

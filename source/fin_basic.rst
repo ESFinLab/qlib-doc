@@ -2,6 +2,13 @@
 金融工程知识基础
 =================
 
+.. toctree::
+   :maxdepth: 2
+   :caption: 主要内容:
+   
+   wiener_process_and_ito_lemma
+
+
 关于几何布朗运动
 ================
 
@@ -18,25 +25,6 @@
 .. note:: 
     对于挂钩标的为指数，但实际对冲为相应股指期货的衍生品，可以将贴水作为分红处理，严格的证明请参考附录。
 
-伊藤引理 Ito's Lemma
-====================
-本文主要介绍伊藤第三引理及其应用。
-
-对于满足以下随机偏微分方式的随机过程
-
-.. math:: 
-    :label: eq_2
-
-    dX_t = \mu_t dt + \sigma_t dW_t
-
-那么对于二次可导函数 :math:`f(t, X_t)` , 有以下等式成立
-
-.. math:: 
-    :label: eq_3
-
-    df(t, X_t) = (\frac{\partial f}{\partial t} + \mu_t\frac{\partial f}{\partial X} + \frac{1}{2}\sigma_t^2\frac{\partial^2f}{\partial X^2})dt + \sigma_t\frac{\partial f}{\partial X}dW_t
-
-关于伊藤引理的推导请参考本节附录
 
 随机过程的离散化
 ================
@@ -120,12 +108,12 @@
 
     \hat{\epsilon} = L\epsilon
 
-是一组服从 :math:`\mathcal{N} (0, \rho_{ij})` 的随机数。
+是一组服从 :math:`\mathcal{N} (0, \rho_{ij})` 的随机数（请证明）。
 
 随机波动率模型
 ===========================
 
-除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型 [2]_。
+除BS模型（常数波动率模型）以外，还有一类随机波动率模型(stochastic volatility model)也被广泛应用，其中比较典型的就是Heston模型 [1]_。
 
 Heston模型中，方差具有均值回归的特性：
 
@@ -146,37 +134,6 @@ Heston模型中，方差具有均值回归的特性：
     Cox-Ingersoll-Ross 模型也常常用来为利率的动态过程建模。
 
 
-附录A：伊藤引理的推导
-=======================
-本节整理自维基百科相关页面，详见参考文献 [5]_
-
-:math:`f(t, X)`  是关于 :math:`X` 的二次可导函数，将其泰勒展开
-
-.. math:: 
-    :label: eq_30
-
-    df(t, X) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}dX + \frac{1}{2}\frac{\partial^2 f}{\partial X^2}dX^2+...
-
-其中
-
-.. math:: 
-    :label: eq_31
-    
-    \begin{align}
-    dX^2 &= (\mu_tdt + \sigma_t dW_t)^2\\
-    &=\mu_t^2dt^2 + 2\mu_t\sigma_t dt dW_t + \sigma_t^2dW_t^2
-    \end{align}
-
-当 :math:`dt \rightarrow 0` 时, :math:`dt^2` 项和 :math:`dtdW_t` 项相比 :math:`dW_t^2(\mathcal{O}(dt))` 更快趋于0， 因此将 :math:`dt^2` 项和 :math:`dtdW_t` 项设为0， 将 :math:`dW_t^2` 项设为 :math:`dt` , 可得
-
-.. math:: 
-    :label: eq_32
-    
-    \begin{align}
-    df(t, X) &= \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}dX + \frac{1}{2}\frac{\partial^2 f}{\partial X^2}dX^2\\
-    &= \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}(\mu_tdt + \sigma_t dW_t) + \frac{1}{2}\frac{\partial^2 f}{\partial X^2}(\sigma_t^2dt)\\
-    &= (\frac{\partial f}{\partial t} + \mu_t\frac{\partial f}{\partial X} + \frac{1}{2}\sigma_t^2\frac{\partial^2f}{\partial X^2})dt + \sigma_t\frac{\partial f}{\partial X}dW_t
-    \end{align}
 
 
 附录B：期货对冲股指期权下的Black-Scholes偏微分方程
@@ -322,7 +279,7 @@ Black-Scholes 偏微分方程
 
 附录D：Heston过程的离散化
 =============================================
-本节整理自参考文献 [1]_
+本节整理自参考文献 [5]_
 
 标的资产价格的离散化算法
 ------------------------
@@ -381,12 +338,12 @@ Black-Scholes 偏微分方程
 参考资料
 =========
 
-.. [1] Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: https://ssrn.com/abstract=946405 or http://dx.doi.org/10.2139/ssrn.946405
-
-.. [2] Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.
+.. [1] Heston, Steven. “A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options.” Review of Financial Studies 6 (1993): 327-343.
 
 .. [3] 期货对冲股指期权下的Black-Scholes偏微分方程， 镒链科技微信公众号 https://mp.weixin.qq.com/s/iFmrWS8JNAROoIG7D5n-mg
 
 .. [4] Cholesky decomposition, Wikipedia https://en.wikipedia.org/wiki/Cholesky_decomposition
 
-.. [5] Ito's lemma, Wikipedia https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma
+.. [5] Andersen, Leif B.G., Efficient Simulation of the Heston Stochastic Volatility Model (January 23, 2007). Available at SSRN: https://ssrn.com/abstract=946405 or http://dx.doi.org/10.2139/ssrn.946405
+
+

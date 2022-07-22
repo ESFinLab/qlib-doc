@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>维纳过程与伊藤引理</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/epub.css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>维纳过程与伊藤引理</h1>
+<p>本节主要参考文献 <a class="footnote-reference brackets" href="#id11" id="id2">1</a> 中第12章的部分内容。</p>
+<section id="id3">
+<h2>维纳过程</h2>
+<p>定义：如果一个变量 <span class="math notranslate nohighlight">\(z\)</span> 满足以下两个性质，我们就称该变量服从 <strong>维纳过程</strong> （Wiener process）:</p>
+<p><strong>性质一</strong>: 变量在一段微小时间 <span class="math notranslate nohighlight">\(\Delta t\)</span> 的变化 <span class="math notranslate nohighlight">\(\Delta z\)</span> 满足：</p>
+<div class="math notranslate nohighlight" id="equation-eq-p-1">
+<span class="eqno">(1)</span>\[\Delta z = \epsilon \sqrt{\Delta t}\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(\epsilon \sim \mathcal{N}(0, 1)\)</span> .</p>
+<p><strong>性质二</strong>: 对于任意两个不同的微小时间段 <span class="math notranslate nohighlight">\(\Delta t\)</span>， <span class="math notranslate nohighlight">\(\Delta z\)</span> 都是相互独立的。</p>
+<p>性质二表明一个维纳过程也是一个马尔科夫过程（Markov process <a class="footnote-reference brackets" href="#id12" id="id4">2</a> ）, 也即关于变量未来的情况只与当前情况有关，而与历史信息无关。</p>
+<p>根据性质一，维纳过程的均值、标准差和方差分别为 :</p>
+<div class="math notranslate nohighlight" id="equation-eq-property-w">
+<span class="eqno">(2)</span>\[\begin{split}\begin{align}
+\mathbf{E}(\Delta z) &amp;= 0\\
+\mathbf{\sigma}(\Delta z) &amp;= \sqrt{\Delta t}\\
+\mathbf{\sigma^2}(\Delta z) &amp;= \Delta t
+\end{align}\end{split}\]</div>
+</section>
+<section id="id5">
+<h2>广义维纳过程</h2>
+<p>变量 <span class="math notranslate nohighlight">\(x\)</span> 服从广义的维纳过程， 如果</p>
+<div class="math notranslate nohighlight" id="equation-generalized-wiener-process">
+<span class="eqno">(3)</span>\[dx = adt + bdz\]</div>
+<p>其中 <span class="math notranslate nohighlight">\(a\)</span> , <span class="math notranslate nohighlight">\(b\)</span> 均为常数。</p>
+<p>广义维纳过程下， <span class="math notranslate nohighlight">\(\Delta x \sim \mathcal{N}(a\Delta t, b^2\Delta t)\)</span> 。</p>
+</section>
+<section id="id6">
+<h2>伊藤过程</h2>
+<p>从广义维纳过程推广至更一般的情形， 即为伊藤过程，其定义为，</p>
+<div class="math notranslate nohighlight" id="equation-ito-process">
+<span class="eqno">(4)</span>\[dx = a(x, t)dt + b(x, t)dz\]</div>
+<img alt="_images/wiener_process.png" src="_images/wiener_process.png" />
+</section>
+<section id="id7">
+<h2>伊藤引理</h2>
+<p>本文主要介绍伊藤第三引理及其应用。</p>
+<p>对于满足以下随机偏微分方式的随机过程(即伊藤过程)</p>
+<div class="math notranslate nohighlight" id="equation-eq-2">
+<span class="eqno">(5)</span>\[dX_t = \mu_t dt + \sigma_t dW_t\]</div>
+<p>那么对于二次可导函数 <span class="math notranslate nohighlight">\(f(t, X_t)\)</span> , 有以下等式成立</p>
+<div class="math notranslate nohighlight" id="equation-eq-3">
+<span class="eqno">(6)</span>\[df(t, X_t) = (\frac{\partial f}{\partial t} + \mu_t\frac{\partial f}{\partial X} + \frac{1}{2}\sigma_t^2\frac{\partial^2f}{\partial X^2})dt + \sigma_t\frac{\partial f}{\partial X}dW_t\]</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>伊藤引理在随机微分过程的离散化以及Black-Scholes-Merton偏微分方程的推导中有重要作用。</p>
+</div>
+<p>关于伊藤引理的推导请参考附录。</p>
+</section>
+<section id="id8">
+<h2>附录：伊藤引理的推导</h2>
+<p>本节整理自维基百科相关页面，详见参考文献 <a class="footnote-reference brackets" href="#id13" id="id9">3</a></p>
+<p><span class="math notranslate nohighlight">\(f(t, X)\)</span>  是关于 <span class="math notranslate nohighlight">\(X\)</span> 的二次可导函数，将其泰勒展开</p>
+<div class="math notranslate nohighlight" id="equation-eq-30">
+<span class="eqno">(7)</span>\[df(t, X) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}dX + \frac{1}{2}\frac{\partial^2 f}{\partial X^2}dX^2+...\]</div>
+<p>其中</p>
+<div class="math notranslate nohighlight" id="equation-eq-31">
+<span class="eqno">(8)</span>\[\begin{split}\begin{align}
+dX^2 &amp;= (\mu_tdt + \sigma_t dW_t)^2\\
+&amp;=\mu_t^2dt^2 + 2\mu_t\sigma_t dt dW_t + \sigma_t^2dW_t^2
+\end{align}\end{split}\]</div>
+<p>当 <span class="math notranslate nohighlight">\(dt \rightarrow 0\)</span> 时, <span class="math notranslate nohighlight">\(dt^2\)</span> 项和 <span class="math notranslate nohighlight">\(dtdW_t\)</span> 项相比 <span class="math notranslate nohighlight">\(dW_t^2(\mathcal{O}(dt))\)</span> 更快趋于0， 因此将 <span class="math notranslate nohighlight">\(dt^2\)</span> 项和 <span class="math notranslate nohighlight">\(dtdW_t\)</span> 项设为0， 将 <span class="math notranslate nohighlight">\(dW_t^2\)</span> 项设为 <span class="math notranslate nohighlight">\(dt\)</span> , 可得</p>
+<div class="math notranslate nohighlight" id="equation-eq-32">
+<span class="eqno">(9)</span>\[\begin{split}\begin{align}
+df(t, X) &amp;= \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}dX + \frac{1}{2}\frac{\partial^2 f}{\partial X^2}dX^2\\
+&amp;= \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial X}(\mu_tdt + \sigma_t dW_t) + \frac{1}{2}\frac{\partial^2 f}{\partial X^2}(\sigma_t^2dt)\\
+&amp;= (\frac{\partial f}{\partial t} + \mu_t\frac{\partial f}{\partial X} + \frac{1}{2}\sigma_t^2\frac{\partial^2f}{\partial X^2})dt + \sigma_t\frac{\partial f}{\partial X}dW_t
+\end{align}\end{split}\]</div>
+</section>
+<section id="id10">
+<h2>参考资料</h2>
+<dl class="footnote brackets">
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Hull, John C. Options futures and other derivatives, 7th edition. Pearson Education, 2003.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>Markov process, Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/Markov_chain">https://en.wikipedia.org/wiki/Markov_chain</a></p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id9">3</a></span></dt>
+<dd><p>Ito’s lemma, Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma">https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>
